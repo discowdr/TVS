@@ -17,7 +17,7 @@
     "builtins": {
       "patterns": [{
         "name": "support.function.builtin.tvs",
-        "match": "\\b(print|ask|len|split|join|read|write|append|sin|cos|sqrt|rand|abs|range)\\b"
+        "match": "\\b(print|ask|len|split|join|read|write|append|sin|cos|sqrt|rand|abs|range|convert)\\b"
       }]
     },
     "strings": {

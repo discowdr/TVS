@@ -1,0 +1,27 @@
+{
+  "name": "tvs-lang",
+  "displayName": "TVS Language",
+  "description": "Syntax highlighting for TVS language (Made by AI, don't blame for that please)",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [{
+      "id": "tvs",
+      "aliases": ["TVS", "tvs"],
+      "extensions": [".tvs"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./icons/TVS.svg",
+        "dark": "./icons/TVS.svg"
+      }
+    }],
+    "grammars": [{
+      "language": "tvs",
+      "scopeName": "source.tvs",
+      "path": "./syntaxes/tvs.tmLanguage.json"
+    }]
+  }
+}

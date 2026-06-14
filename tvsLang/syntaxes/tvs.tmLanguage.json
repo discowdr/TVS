@@ -1,0 +1,38 @@
+{
+  "scopeName": "source.tvs",
+  "patterns": [
+    { "include": "#keywords" },
+    { "include": "#strings" },
+    { "include": "#comments" },
+    { "include": "#numbers" },
+    { "include": "#builtins" }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [{
+        "name": "keyword.control.tvs",
+        "match": "\\b(tv|glitch|global|if|else|while|for|in|return|try|catch|import)\\b"
+      }]
+    },
+    "builtins": {
+      "patterns": [{
+        "name": "support.function.builtin.tvs",
+        "match": "\\b(print|ask|len|split|join|read|write|append|sin|cos|sqrt|rand|abs|range)\\b"
+      }]
+    },
+    "strings": {
+      "name": "string.quoted.double.tvs",
+      "begin": "\"",
+      "end": "\""
+    },
+    "comments": {
+      "name": "comment.line.double-slash.tvs",
+      "begin": "//",
+      "end": "$"
+    },
+    "numbers": {
+      "name": "constant.numeric.tvs",
+      "match": "\\b\\d+(\\.\\d+)?\\b"
+    }
+  }
+}

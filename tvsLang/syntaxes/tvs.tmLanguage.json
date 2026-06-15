@@ -1,23 +1,42 @@
 {
   "scopeName": "source.tvs",
+  "name": "TVS (Televisions)",
   "patterns": [
     { "include": "#keywords" },
+    { "include": "#builtins" },
     { "include": "#strings" },
     { "include": "#comments" },
+    { "include": "#multi_comments" },
     { "include": "#numbers" },
-    { "include": "#builtins" }
+    { "include": "#operators" },
+    { "include": "#function_calls" }
   ],
   "repository": {
     "keywords": {
       "patterns": [{
         "name": "keyword.control.tvs",
-        "match": "\\b(tv|glitch|global|if|else|while|for|in|return|try|catch|import)\\b"
+        "match": "\\b(tv|glitch|global|if|else|elseif|while|for|in|return|try|catch|import|break|continue|null|true|false|and|or|not|static)\\b"
       }]
     },
     "builtins": {
       "patterns": [{
         "name": "support.function.builtin.tvs",
-        "match": "\\b(print|ask|len|split|join|read|write|append|sin|cos|sqrt|rand|abs|range|convert)\\b"
+        "match": "\\b(print|ask|len|split|join|read|write|append|sin|cos|sqrt|rand|abs|range|convert|wait|delay|seed|randint|string|antenna)\\b"
+      }]
+    },
+    "operators": {
+      "patterns": [{
+        "name": "keyword.operator.tvs",
+        "match": "(==|!=|<=|>=|=|\\+|\\-|\\*|/|<|>|\\[|\\]|\\{|\\}|\\(|\\)|;|:|,|\\?)"
+      }]
+    },
+    "function_calls": {
+      "patterns": [{
+        "name": "meta.function-call.tvs",
+        "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\[)",
+        "captures": {
+          "1": { "name": "entity.name.function.tvs" }
+        }
       }]
     },
     "strings": {
@@ -29,6 +48,11 @@
       "name": "comment.line.double-slash.tvs",
       "begin": "//",
       "end": "$"
+    },
+    "multi_comments": {
+      "name": "comment.block.tvs",
+      "begin": "/\\*",
+      "end": "\\*/"
     },
     "numbers": {
       "name": "constant.numeric.tvs",
